@@ -34,12 +34,13 @@ function Hero() {
   }
 
   const photoRingStyle = {
-    width: '200px',
-    height: '200px',
+    width: '250px',
+    height: '250px',
     borderRadius: '50%',
     border: '2px solid var(--accent-teal)',
     padding: '4px',
     boxShadow: '0 0 30px rgba(45, 212, 191, 0.2)',
+    overflow: 'hidden',
   }
 
   const photoImgStyle = {
@@ -47,7 +48,9 @@ function Hero() {
     height: '100%',
     borderRadius: '50%',
     objectFit: 'cover',
-    objectPosition: 'top',
+    objectPosition: '50% 8%',
+    transform: 'scale(1.8)',
+    transformOrigin: '47% 10%',
   }
 
   const greetingStyle = {
