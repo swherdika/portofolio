@@ -46,7 +46,7 @@ function Navbar() {
 
   return (
     <nav style={navStyle}>
-      <span style={logoStyle}>hsw.dev</span>
+      <span style={logoStyle}>herdika-shidqi.vercel.app</span>
       <div style={{ display: 'flex', gap: '2rem' }}>
         {navItems.map((item) => (
           <a
