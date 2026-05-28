@@ -1,10 +1,13 @@
+import useIsMobile from '../hooks/useIsMobile'
+
 function Hero() {
+  const isMobile = useIsMobile()
 
   const sectionStyle = {
     minHeight: '100vh',
     display: 'flex',
     alignItems: 'center',
-    padding: '0 2rem',
+    padding: isMobile ? '6rem 1.5rem 3rem' : '0 2rem',
     position: 'relative',
     overflow: 'hidden',
   }
@@ -25,8 +28,10 @@ function Hero() {
     margin: '0 auto',
     width: '100%',
     display: 'flex',
+    flexDirection: isMobile ? 'column' : 'row',
     alignItems: 'center',
-    gap: '4rem',
+    gap: isMobile ? '2rem' : '4rem',
+    textAlign: isMobile ? 'center' : 'left',
   }
 
   const photoWrapperStyle = {
@@ -34,8 +39,8 @@ function Hero() {
   }
 
   const photoRingStyle = {
-    width: '250px',
-    height: '250px',
+    width: isMobile ? '180px' : '250px',
+    height: isMobile ? '180px' : '250px',
     borderRadius: '50%',
     border: '2px solid var(--accent-teal)',
     padding: '4px',
@@ -49,7 +54,7 @@ function Hero() {
     borderRadius: '50%',
     objectFit: 'cover',
     objectPosition: '50% 8%',
-    transform: 'scale(1.8)',
+    transform: 'scale(2.0)',
     transformOrigin: '47% 10%',
   }
 
@@ -63,7 +68,7 @@ function Hero() {
 
   const nameStyle = {
     fontFamily: 'var(--font-display)',
-    fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+    fontSize: isMobile ? 'clamp(2rem, 10vw, 3rem)' : 'clamp(2.5rem, 5vw, 4rem)',
     fontWeight: 800,
     lineHeight: 1.1,
     marginBottom: '0.5rem',
@@ -77,22 +82,24 @@ function Hero() {
   const titleStyle = {
     fontFamily: 'var(--font-mono)',
     color: 'var(--accent-blue)',
-    fontSize: '1rem',
+    fontSize: isMobile ? '0.85rem' : '1rem',
     marginBottom: '1.5rem',
     letterSpacing: '0.05em',
   }
 
   const bioStyle = {
     color: 'var(--text-secondary)',
-    fontSize: '1rem',
+    fontSize: '0.95rem',
     maxWidth: '480px',
     lineHeight: 1.8,
     marginBottom: '2rem',
+    margin: isMobile ? '0 auto 2rem' : '0 0 2rem',
   }
 
   const btnRowStyle = {
     display: 'flex',
     gap: '1rem',
+    justifyContent: isMobile ? 'center' : 'flex-start',
   }
 
   const primaryBtnStyle = {
@@ -120,9 +127,7 @@ function Hero() {
 
   return (
     <section id="about" style={sectionStyle}>
-
       <div style={gridBgStyle} />
-
       <div style={contentStyle}>
 
         <div style={photoWrapperStyle}>
@@ -137,22 +142,18 @@ function Hero() {
 
         <div>
           <p style={greetingStyle}>{'>'} hello, world</p>
-
           <h1 style={nameStyle}>
             Herdika Shidqi
             <br />
             <span style={lastNameStyle}>Wibowo</span>
           </h1>
-
           <p style={titleStyle}>
             Software Engineer · Embedded Systems & C/C++
           </p>
-
           <p style={bioStyle}>
             I build software close to the metal — shipped on Samsung Smart TVs,
             maintained across legacy codebases, and delivered without cutting corners.
           </p>
-
           <div style={btnRowStyle}>
             <a
               href="#experience"
@@ -168,12 +169,12 @@ function Hero() {
               rel="noreferrer"
               style={secondaryBtnStyle}
               onMouseEnter={e => {
-                e.target.style.borderColor = 'var(--accent-teal)'
-                e.target.style.color = 'var(--accent-teal)'
+                e.currentTarget.style.borderColor = 'var(--accent-teal)'
+                e.currentTarget.style.color = 'var(--accent-teal)'
               }}
               onMouseLeave={e => {
-                e.target.style.borderColor = 'var(--border)'
-                e.target.style.color = 'var(--text-secondary)'
+                e.currentTarget.style.borderColor = 'var(--border)'
+                e.currentTarget.style.color = 'var(--text-secondary)'
               }}
             >
               linkedin
