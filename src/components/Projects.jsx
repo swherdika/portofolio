@@ -1,3 +1,5 @@
+import useIsMobile from '../hooks/useIsMobile'
+
 const projects = [
   {
     name: 'task-queue-cli',
@@ -9,9 +11,10 @@ const projects = [
 ]
 
 function Projects() {
+  const isMobile = useIsMobile()
 
   const sectionStyle = {
-    padding: '6rem 2rem',
+    padding: isMobile ? '4rem 1.5rem' : '6rem 2rem',
   }
 
   const innerStyle = {
@@ -21,7 +24,7 @@ function Projects() {
 
   const headingStyle = {
     fontFamily: 'var(--font-display)',
-    fontSize: '2rem',
+    fontSize: isMobile ? '1.75rem' : '2rem',
     fontWeight: 800,
     color: 'var(--text-primary)',
     marginBottom: '0.5rem',
@@ -44,7 +47,7 @@ function Projects() {
     border: '1px solid var(--accent-teal)',
     borderRadius: '8px',
     padding: '2rem',
-    maxWidth: '560px',
+    maxWidth: isMobile ? '100%' : '560px',
     position: 'relative',
   }
 
@@ -72,7 +75,7 @@ function Projects() {
 
   const descStyle = {
     color: 'var(--text-secondary)',
-    fontSize: '0.9rem',
+    fontSize: isMobile ? '0.85rem' : '0.9rem',
     lineHeight: 1.8,
     marginBottom: '1.25rem',
   }
@@ -116,12 +119,10 @@ function Projects() {
   return (
     <section id="projects" style={sectionStyle}>
       <div style={innerStyle}>
-
         <h2 style={headingStyle}>
           Personal <span style={headingAccentStyle}>Projects</span>
         </h2>
         <p style={subheadingStyle}>// what i build outside work</p>
-
         {projects.map((project) => (
           <div key={project.name} style={cardStyle}>
             {project.highlight && (
@@ -146,9 +147,7 @@ function Projects() {
             </a>
           </div>
         ))}
-
         <p style={moreComingStyle}>// more projects coming soon</p>
-
       </div>
     </section>
   )

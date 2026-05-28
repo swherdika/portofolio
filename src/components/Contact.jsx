@@ -1,7 +1,10 @@
+import useIsMobile from '../hooks/useIsMobile'
+
 function Contact() {
+  const isMobile = useIsMobile()
 
   const sectionStyle = {
-    padding: '6rem 2rem',
+    padding: isMobile ? '4rem 1.5rem' : '6rem 2rem',
     backgroundColor: 'var(--bg-secondary)',
   }
 
@@ -16,7 +19,7 @@ function Contact() {
 
   const headingStyle = {
     fontFamily: 'var(--font-display)',
-    fontSize: '2rem',
+    fontSize: isMobile ? '1.75rem' : '2rem',
     fontWeight: 800,
     color: 'var(--text-primary)',
     marginBottom: '0.5rem',
@@ -44,15 +47,17 @@ function Contact() {
 
   const linksStyle = {
     display: 'flex',
-    gap: '1.5rem',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
+    flexDirection: isMobile ? 'column' : 'row',
+    gap: '1rem',
+    alignItems: 'center',
     marginBottom: '3rem',
+    width: isMobile ? '100%' : 'auto',
   }
 
   const linkStyle = {
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
     gap: '0.5rem',
     padding: '0.75rem 1.5rem',
     border: '1px solid var(--border)',
@@ -62,6 +67,7 @@ function Contact() {
     color: 'var(--text-secondary)',
     transition: 'all 0.2s ease',
     letterSpacing: '0.05em',
+    width: isMobile ? '100%' : 'auto',
   }
 
   const footerStyle = {
@@ -73,25 +79,22 @@ function Contact() {
   }
 
   const links = [
-    { label: 'email', value: 'herdika.s1@gmail.com', href: 'mailto:herdika.s1@gmail.com' },
-    { label: 'linkedin', value: '/in/herdika-shidqi', href: 'https://linkedin.com/in/herdika-shidqi' },
-    { label: 'github', value: '/swherdika', href: 'https://github.com/swherdika' },
+    { label: 'email', href: 'mailto:herdika.s1@gmail.com' },
+    { label: 'linkedin', href: 'https://linkedin.com/in/herdika-shidqi' },
+    { label: 'github', href: 'https://github.com/swherdika' },
   ]
 
   return (
     <section id="contact" style={sectionStyle}>
       <div style={innerStyle}>
-
         <h2 style={headingStyle}>
           Get In <span style={headingAccentStyle}>Touch</span>
         </h2>
         <p style={subheadingStyle}>// let's work together</p>
-
         <p style={descStyle}>
           I'm currently open to new opportunities. Whether you have a role in mind,
           a project to discuss, or just want to connect — my inbox is open.
         </p>
-
         <div style={linksStyle}>
           {links.map((link) => (
             <a
@@ -113,11 +116,9 @@ function Contact() {
             </a>
           ))}
         </div>
-
         <p style={footerStyle}>
           designed & built by Herdika Shidqi Wibowo © 2026
         </p>
-
       </div>
     </section>
   )
