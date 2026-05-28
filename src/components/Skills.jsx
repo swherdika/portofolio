@@ -1,3 +1,5 @@
+import useIsMobile from '../hooks/useIsMobile'
+
 const skillGroups = [
   {
     category: 'Systems & Embedded',
@@ -22,9 +24,10 @@ const skillGroups = [
 ]
 
 function Skills() {
+  const isMobile = useIsMobile()
 
   const sectionStyle = {
-    padding: '6rem 2rem',
+    padding: isMobile ? '4rem 1.5rem' : '6rem 2rem',
     backgroundColor: 'var(--bg-secondary)',
   }
 
@@ -35,7 +38,7 @@ function Skills() {
 
   const headingStyle = {
     fontFamily: 'var(--font-display)',
-    fontSize: '2rem',
+    fontSize: isMobile ? '1.75rem' : '2rem',
     fontWeight: 800,
     color: 'var(--text-primary)',
     marginBottom: '0.5rem',
@@ -55,7 +58,7 @@ function Skills() {
 
   const gridStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))',
+    gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(380px, 1fr))',
     gap: '1.5rem',
   }
 
@@ -96,12 +99,10 @@ function Skills() {
   return (
     <section id="skills" style={sectionStyle}>
       <div style={innerStyle}>
-
         <h2 style={headingStyle}>
           Technical <span style={headingAccentStyle}>Skills</span>
         </h2>
         <p style={subheadingStyle}>// what i work with</p>
-
         <div style={gridStyle}>
           {skillGroups.map((group) => (
             <div key={group.category} style={cardStyle}>
@@ -129,7 +130,6 @@ function Skills() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   )

@@ -1,3 +1,5 @@
+import useIsMobile from '../hooks/useIsMobile'
+
 const experiences = [
   {
     company: 'Samsung Research Indonesia',
@@ -35,9 +37,10 @@ const experiences = [
 ]
 
 function Experience() {
+  const isMobile = useIsMobile()
 
   const sectionStyle = {
-    padding: '6rem 2rem',
+    padding: isMobile ? '4rem 1.5rem' : '6rem 2rem',
     position: 'relative',
   }
 
@@ -48,7 +51,7 @@ function Experience() {
 
   const headingStyle = {
     fontFamily: 'var(--font-display)',
-    fontSize: '2rem',
+    fontSize: isMobile ? '1.75rem' : '2rem',
     fontWeight: 800,
     color: 'var(--text-primary)',
     marginBottom: '0.5rem',
@@ -68,7 +71,7 @@ function Experience() {
 
   const timelineStyle = {
     position: 'relative',
-    paddingLeft: '2rem',
+    paddingLeft: isMobile ? '1.25rem' : '2rem',
     borderLeft: '1px solid var(--border)',
   }
 
@@ -81,7 +84,7 @@ function Experience() {
 
   const dotStyle = {
     position: 'absolute',
-    left: '-2.4rem',
+    left: isMobile ? '-1.65rem' : '-2.4rem',
     top: '0.4rem',
     width: '10px',
     height: '10px',
@@ -92,7 +95,7 @@ function Experience() {
 
   const companyStyle = {
     fontFamily: 'var(--font-display)',
-    fontSize: '1.2rem',
+    fontSize: isMobile ? '1rem' : '1.2rem',
     fontWeight: 700,
     color: 'var(--text-primary)',
     marginBottom: '0.25rem',
@@ -116,7 +119,7 @@ function Experience() {
 
   const bulletStyle = {
     color: 'var(--text-secondary)',
-    fontSize: '0.9rem',
+    fontSize: isMobile ? '0.85rem' : '0.9rem',
     lineHeight: 1.8,
     marginBottom: '0.5rem',
     paddingLeft: '1rem',
@@ -126,12 +129,10 @@ function Experience() {
   return (
     <section id="experience" style={sectionStyle}>
       <div style={innerStyle}>
-
         <h2 style={headingStyle}>
           Work <span style={headingAccentStyle}>Experience</span>
         </h2>
         <p style={subheadingStyle}>// where i've been</p>
-
         <div style={timelineStyle}>
           {experiences.map((exp) => (
             <div key={exp.company} style={cardStyle}>
@@ -145,7 +146,6 @@ function Experience() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   )
