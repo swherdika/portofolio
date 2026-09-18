@@ -2,9 +2,18 @@ import useIsMobile from '../hooks/useIsMobile'
 
 const experiences = [
   {
+    company: 'NH Korindo Sekuritas Indonesia',
+    role: 'HTS Software Developer',
+    period: 'Jun 2026 – Present',
+    bullets: [
+      'Maintain and support a production desktop application built on MFC 4.2 (C++), keeping a legacy codebase stable for daily use',
+      'Researching and designing the software architecture for a React + Tauri desktop application that will replace the legacy MFC system',
+    ]
+  },
+  {
     company: 'Samsung Research Indonesia',
     role: 'Software Engineer',
-    period: 'Aug 2022 – Present',
+    period: 'Aug 2022 – Jun 2026',
     bullets: [
       'Contributed to a cross-functional team of 4 engineers developing a dbus-activated daemon application for Samsung Smart TVs, designed to offload .NET assembly compilation from boot time to idle CPU periods — improving TV startup performance for shipped consumer devices',
       'Built and maintained compilation queue management logic in C++, including CPU usage threshold monitoring to schedule tasks without straining system resources',
