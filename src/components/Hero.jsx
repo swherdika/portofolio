@@ -133,7 +133,7 @@ function Hero() {
         <div style={photoWrapperStyle}>
           <div style={photoRingStyle}>
             <img
-              src="/profile.jpg"
+              src={`${import.meta.env.BASE_URL}profile.jpg`}
               alt="Herdika Shidqi Wibowo"
               style={photoImgStyle}
             />

@@ -1,0 +1,41 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]      # run on every push to main
+  workflow_dispatch:      # also allow a manual "Run workflow" button
+
+permissions:
+  contents: read
+  pages: write            # needed to publish to Pages
+  id-token: write         # needed by deploy-pages to verify it's really this repo
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22    # Vite 8 needs Node 20.19+ or 22.12+
+          cache: npm
+      - run: npm ci           # clean install from package-lock.json
+      - run: npm run build    # produces dist/
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
