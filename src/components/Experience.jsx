@@ -13,20 +13,20 @@ const experiences = [
   {
     company: 'Samsung Research Indonesia',
     role: 'Software Engineer',
-    period: 'Aug 2022 – Jun 2026',
+    period: 'Apr 2024 – Jun 2026',
     bullets: [
-      'Contributed to a cross-functional team of 4 engineers developing a dbus-activated daemon application for Samsung Smart TVs, designed to offload .NET assembly compilation from boot time to idle CPU periods — improving TV startup performance for shipped consumer devices',
+      'Contributed to a cross-functional team of 6 engineers developing a dbus-activated daemon application for Samsung Smart TVs, designed to offload .NET assembly compilation from boot time to idle CPU periods',
       'Built and maintained compilation queue management logic in C++, including CPU usage threshold monitoring to schedule tasks without straining system resources',
-      'Developed a standalone CLI tool (sole owner) for interfacing with the daemon app — enabling engineers to inspect status, manage task queues, and control processes during development and QA',
+      'Developed a standalone CLI tool for interfacing with the daemon app to inspect status, manage task queues, and control processes during development and QA',
       'Supported porting efforts for Samsung Tizen framework to RISC-V CPU architecture, contributing to compatibility testing across the platform',
-      'Maintained and debugged a customized .NET launcher plugin (forked from Microsoft open-source dotnet-launcher), resolving issues across multiple subsystems',
-      'Reassigned to maintain SmartThings application and Home Screen component across 5 legacy TV model years (2018–2022), managing compatibility and bug fixes across multiple simultaneous codebases in a Tizen environment',
+      'Maintained and debugged a customized .NET launcher plugin for Tizen TV, resolving issues across multiple subsystems and developing broad understanding of the plugin\'s internals',
+      'Maintained SmartThings application and Home Screen component across 5 legacy TV model years (2018–2022), managing compatibility and bug fixes across multiple simultaneous codebases in a Tizen environment',
     ]
   },
   {
     company: 'PT. BeIT Inovasi Tiwikrama',
     role: 'Backend Developer',
-    period: 'Jan 2022 – Jul 2022',
+    period: 'Aug 2023 – Apr 2024',
     bullets: [
       'Designed and implemented REST APIs using Laravel and .NET Core to serve data and business logic for client-facing applications',
       'Architected database schemas and ODM structures aligned to project requirements, ensuring scalable and maintainable data layers',
@@ -34,11 +34,11 @@ const experiences = [
     ]
   },
   {
-    company: 'Kemdikbudristek / Kedaireka',
-    role: 'Full Stack Developer (Freelance)',
-    period: 'Sep 2021 – Dec 2021',
+    company: 'Direktorat Jenderal Pendidikan Tinggi, Riset dan Teknologi Kemdikbudristek',
+    role: 'Full Stack Developer and Administrator Assist (Freelance)',
+    period: 'Dec 2022 – Dec 2023',
     bullets: [
-      'Served as sole PIC for an end-to-end reviewer assignment feature — independently designing and implementing the full flow including database relations, CRUD operations, query logic, and UI tables for a research proposal management system used by academic researchers',
+      'Served as sole PIC for an end-to-end reviewer assignment feature, independently designing and implementing the full flow including database relations, CRUD operations, query logic, and UI tables for a research proposal management system used by academic researchers',
       'Presented and demonstrated the feature directly to client stakeholders and administration teams',
       'Collaborated in an agile team of 11+ engineers across frontend (Tailwind, Alpine.js, Livewire) and backend (Laravel) layers',
     ]
