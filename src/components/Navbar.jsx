@@ -83,7 +83,7 @@ function Navbar() {
   return (
     <>
       <nav style={navStyle}>
-        <span style={logoStyle}>herdika-shidqi.vercel.app</span>
+        <span style={logoStyle}>swherdika.github.io</span>
 
         {isMobile ? (
           <div style={hamburgerStyle} onClick={() => setMenuOpen(!menuOpen)}>
